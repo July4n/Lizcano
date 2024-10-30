@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Lizcano</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* Fondo blanco */
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 10px 0; /* Espacio más pequeño en la sección del logo */
+    }
+
+    .image-container {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Ajusta la imagen dentro del contenedor sin deformarla */
+    }
+
+    .information {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    main {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .divider {
+      width: 100%;
+      height: 3px; /* Más ancha */
+      background-color: black;
+      margin: 20px 0;
+    }
+
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons li {
+      margin: 0 10px;
+    }
+
+    .social-icon img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain; /* Asegura que los íconos también mantengan su proporción */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="image-container" id="logo">
+      <img src="Ll/logo.png" alt="logo">
+    </div>
+  </header>
+
+  <div class="divider"></div> <!-- Línea divisora entre logo y contenido -->
+
+  <section id="hero">
+    <div class="hero-container"></div> 
+    <div class="information-container">
+      <div class="image-container">
+        <img src="Ll/yo.jpg" alt="foto"> <!-- Imagen de perfil con 150px de ancho y alto -->
+      </div>
+      <div class="information">
+        <h1>Daniel Lizcano</h1>
+        <span>@DLizcano</span>
+        <p>Soy Daniel Lizcano, soy skater profesional desde hace cinco años, compitiendo en torneos nacionales e internacionales por todo el mundo.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div> <!-- Línea divisora entre información y redes sociales -->
+
+  <main>
+    <p>Contáctame</p>
+
+    <ul class="social-icons">
+      <li>
+        <a href="https://www.instagram.com/dlizcano320?igsh=eTI0Z3RtZTZsMWN2" class="social-icon"><img src="Ll/ig.png" alt="Instagram"></a>
+      </li>
+    </ul>
+
+    <!-- Contador de visitas -->
+    <p style="color: black; font-weight: bold;">Visitas: <span id="visit-count">0</span></p>
+
+    <!-- Script del contador de visitas -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const visitCountEl = document.getElementById("visit-count");
+        let visitCount = parseInt(localStorage.getItem("visitCount")) || 0;
+        visitCount++;
+        visitCountEl.textContent = visitCount;
+        localStorage.setItem("visitCount", visitCount);
+      });
+    </script>
+  </main>
+</body>
+</html>
